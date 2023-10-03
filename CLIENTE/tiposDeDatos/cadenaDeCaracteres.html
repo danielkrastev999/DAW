@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Cadena de Caracteres
+    </title>
+    <!--Bootstrap-->
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/JavaScript" src="js/cadenaDeCaracteres.js"></script>
+</head>
+
+<body>
+    <div class="row mt-3">
+        <div class="col"></div>
+        <div class="col bg-secondary text-light">
+            <p class="display-6 text-center">Cadena de Caracteres</p>
+            <form>
+                <div class="mb-3 mt-3">
+                    <label class="form-label" for="texto">Dato</label>
+                    <input class="form-control" value="ABCDEFGHIJ" type="text" name="dato" id="texto" placeholder="Introduce un dato"><br />
+                    <button type="button" onclick="cadenaCaracter()" class="btn btn-light">Enviar</button>
+                </div>
+                <div class="mb-3 mt-3">
+                    <p class="display-6 text-center">Resultado</p>
+                    <p class="display-6 text-center" id="salida1"></p>
+                </div>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</body>
+</html>
