@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear tabla en el DOM</title>
+    <title>Tabla personalizada</title>
 </head>
 <body>
-    <label for="filasInput">Filas:</label>
-    <input type="number" id="filasInput"><br /><br />
-    <label for="columnasInput">Columnas:</label>
-    <input type="number" id="columnasInput"><br /><br />
-    <label for="colorInput">Color:</label>
-    <input type="color" id="colorInput"><br /><br />
-    <input type="radio" name="borde" value="bordeSi" id="bordeSi"> <label for="bordeSi">Borde</label><br />
-    <button style="margin: 2em;" type="submit" id="boton" onclick="getTable()">Crear tabla</button>
+    <h1>Creador de tablas</h1>
 
-    <script src="js/crearTabla.js"></script>
+    <label for="inputFilas">Filas: </label>
+    <input type="number" name="inputFilas" id="inputFilas"><br /><br />
+
+    <label for="inputColumnas">Columnas: </label>
+    <input type="number" name="inputColumnas" id="inputColumnas"><br /><br />
+
+    <label for="inputColor">Color: </label>
+    <input type="color" name="inputColor" id="inputColor"><br /><br />
+
+    <label for="inputBorde">Borde: </label>
+    <input type="checkbox" name="inputBorde" id="inputBorde"><br /><br />
+
+    <button type="submit" onclick="getTable()">Crear tabla</button>
+    <script type="text/javascript" src="js/formTabla.js"></script>
 </body>
 </html>
