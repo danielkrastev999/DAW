@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios DOM</title>
+</head>
+<body>
+    <!--EJERCICIOS DE MANIPULAR EL DOM-->
+    <!--Ejercicio 1-->
+    <label for="inputParrafo">Texto:</label>
+    <input type="text" name="inputParrafo" id="inputParrafo"><br /><br />
+    <button type="submit" onclick="getParagraph()">Añadir parrafo</button>
+    <div id="miDiv"></div>
+
+    <hr><!--Ejercicio 2-->
+    <button type="submit" onclick="getList()">Añadir elemento a lista</button>
+    <ul id="miLista"></ul>
+
+    <hr><!--Ejercicio 3-->
+    <button type="submit" onclick="getLink()">Ver Enlace</button>
+    <div id="miDiv2"></div>
+
+    <!--EJERCICIOS QUE MANIPULAN PROPIEDADES CSS DE ELEMENTOS-->
+
+    <hr><!--Ejercicio 4-->
+    <button type="submit" onclick="changeColor()">Color</button>
+    <div style="width: 500px; height: 50px" id="miElemento"></div>
+
+
+    <hr><!--Ejercicio 5-->
+    <button type="submit" onclick="changeFontSize()">Cambiar tamaño fuente</button>
+    <p id="miTexto">Haz click para cambiarme de tamaño</p>
+
+    <hr><!--Ejercicio 6-->
+    <button type="submit" onclick="getOpacity()">Ocultar elemento</button>
+    <p id="elementoOculto">Clicka para ponerte la capa de invisibilidad Harry</p>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
