@@ -1,6 +1,5 @@
-//CREAR EJERCICIOS COMO ESTOS CON TODO TIPO DE OPCIONES APARTE DE TABLAS
-function getTable(){
 
+function getTable(){
     let cuerpo = document.getElementsByTagName("body")[0];
     let tablaExistente = document.getElementById("miTabla");
 
@@ -10,20 +9,20 @@ function getTable(){
     }
 
     let tabla = document.createElement("table");
-    tabla.id = "miTabla"
+    tabla.id = "miTabla";
+    tabla.style.margin = "1em";
 
-    
-    let bodyTabla = document.createElement("tbody")
-    let inputFilas = document.getElementById("inputFilas").value;
-    let inputColumnas = document.getElementById("inputColumnas").value;
-    let inputColor = document.getElementById("inputColor").value;
+    let inputFilas = document.getElementById("inputFilas").value; // Filas a crear
+    let inputColumnas = document.getElementById("inputColumnas").value; //  Columnas a crear
+    let inputColor = document.getElementById("inputColor").value; //    Color de los bordes
 
 
     for(let i = 0; i < inputFilas; i++){
         let filas = document.createElement("tr");
+        
         for(let j = 0; j < inputColumnas; j++){
             let celdas = document.createElement("td");
-            celdas.textContent = "Columna " + (j+1); 
+            celdas.textContent =(i+1) + " - " + (j+1); 
             celdas.style.padding = "1em";
 
             if(document.getElementById("inputBorde").checked){
@@ -32,8 +31,7 @@ function getTable(){
             }
             filas.appendChild(celdas);
         }
-        bodyTabla.appendChild(filas)
+        tabla.appendChild(filas);
     }
-    tabla.appendChild(bodyTabla);
     cuerpo.appendChild(tabla);
 }
