@@ -27,7 +27,7 @@ function getLink() {
     let parrafo = document.createElement("p"); //   Creo un parrafo
     let enlace = document.createElement("a"); //    Creo un elemento "a" para crear el enlace
     enlace.setAttribute("href", "https://www.w3schools.com/"); //   Le doy el atributo href
-    enlace.textContent = "Visitar w3school"; // El texto que aparecerá y que al clickar te llevara a w3school
+    parrafo.textContent = "Visitar w3school"; // El texto que aparecerá y que al clickar te llevara a w3school
 
     enlace.appendChild(parrafo); // Añado el elemento parrafo al enlace
     miDiv2.appendChild(enlace); //  Añado el elemento enlace a miDiv2
@@ -86,7 +86,7 @@ function changeParagraphColor(){
         textoCambiante.style.color = 'BlueViolet';  //  le cambio el color  al parrafo
     
     //  Funcion interna que se ejecuta cuando el mouse se va fuera del parrafo
-    document.getElementById("textoCambiante").onmouseout = function(){
+    textoCambiante.onmouseout = function(){
         textoCambiante.style.color = 'maroon';  // cambia el color al original
     }
 }
