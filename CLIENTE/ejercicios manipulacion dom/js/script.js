@@ -69,12 +69,24 @@ function changeFontSize(){
 function getOpacity(){
     let elementoOculto = document.getElementById("elementoOculto"); //  Guardo en elementoOculto el elemento con id elementoOculto del html
  
-    if(oculto){
-        elementoOculto.style.opacity = "100%";
-        oculto = false;
-    }else if(oculto == false){
-        elementoOculto.style.opacity = "0%";
-        oculto = true;
+    //  Recordatorio ! oculto = false
+    if(oculto){ //  Si oculto == true
+        elementoOculto.style.opacity = "100%"; //   Opacidad al 100% y desaparece
+        oculto = false; //  Y cambiamos el valor a false 
+    }else if(oculto == false){ //   Si oculto == false
+        elementoOculto.style.opacity = "0%"; //C    ambiamos la opacidad al 0% y aparece
+        oculto = true; //   Asignamos true al valor de la variable controladora 
     }
 
+}
+
+//  Funcion que solo se ejecuta cuando el mouse pasa por encima
+function changeParagraphColor(){
+    let textoCambiante = document.getElementById("textoCambiante") ;//  Guardo en textoCambiante el elemento con id textoCambiante del html
+        textoCambiante.style.color = 'BlueViolet';  //  le cambio el color  al parrafo
+    
+    //  Funcion interna que se ejecuta cuando el mouse se va fuera del parrafo
+    document.getElementById("textoCambiante").onmouseout = function(){
+        textoCambiante.style.color = 'maroon';  // cambia el color al original
+    }
 }
