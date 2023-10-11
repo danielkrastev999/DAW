@@ -3,10 +3,9 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
-    border: 1px solid red;
 }
 
-#imagenes {
+#contenedorImagenes {
     display: flex;
     align-items: center;
     justify-content: center;
