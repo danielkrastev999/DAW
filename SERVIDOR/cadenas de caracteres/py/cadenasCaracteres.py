@@ -85,7 +85,7 @@ letrasReves(texto)
 print("<hr />")
 
 #---
-if buscarPalabra(palabra, texto):
+if buscarPalabra(palabra, texto): # asume que lo estamos comparando a True
     print("Palabra encontrada")
 else:
     print("Palabra no encontrada")
