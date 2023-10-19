@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahorcado</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/ahorcado.js"></script>
+  </head>
+  <body onload="newGame()">
+    <div id="containerMain">
+      <div id="containerButtons">
+        <button onclick="checkWord('A')" class="letter-button" id="A">A</button>
+        <button onclick="checkWord('B')" class="letter-button" id="B">B</button>
+        <button onclick="checkWord('C')" class="letter-button" id="C">C</button>
+        <button onclick="checkWord('D')" class="letter-button" id="D">D</button>
+        <button onclick="checkWord('E')" class="letter-button" id="E">E</button>
+        <button onclick="checkWord('F')" class="letter-button" id="F">F</button>
+        <button onclick="checkWord('G')" class="letter-button" id="G">G</button>
+        <button onclick="checkWord('H')" class="letter-button" id="H">H</button>
+        <button onclick="checkWord('I')" class="letter-button" id="I">I</button>
+        <button onclick="checkWord('J')" class="letter-button" id="J">J</button>
+        <button onclick="checkWord('K')" class="letter-button" id="K">K</button>
+        <button onclick="checkWord('L')" class="letter-button" id="L">L</button>
+        <button onclick="checkWord('M')" class="letter-button" id="M">M</button>
+        <button onclick="checkWord('N')" class="letter-button" id="N">N</button>
+        <button onclick="checkWord('O')" class="letter-button" id="O">O</button>
+        <button onclick="checkWord('P')" class="letter-button" id="P">P</button>
+        <button onclick="checkWord('Q')" class="letter-button" id="Q">Q</button>
+        <button onclick="checkWord('R')" class="letter-button" id="R">R</button>
+        <button onclick="checkWord('S')" class="letter-button" id="S">S</button>
+        <button onclick="checkWord('T')" class="letter-button" id="T">T</button>
+        <button onclick="checkWord('U')" class="letter-button" id="U">U</button>
+        <button onclick="checkWord('V')" class="letter-button" id="V">V</button>
+        <button onclick="checkWord('W')" class="letter-button" id="W">W</button>
+        <button onclick="checkWord('X')" class="letter-button" id="X">X</button>
+        <button onclick="checkWord('Y')" class="letter-button" id="Y">Y</button>
+        <button onclick="checkWord('Z')" class="letter-button" id="Z">Z</button>
+      </div>
+      <div id="containerDraw">
+        <div class="imagenes">
+          <img id="gameImg" src="imagenes/ahorcado1.png" alt="1" />
+        </div>
+      </div>
+      <div id="containerWords">
+        <h2 id="underscores"></h2>
+      </div>
+    </div>
+    <div id="containerNewGame">
+      <button id="newGameButton" type="button" onclick="newGame()">Partida nueva</button>
+    </div>
+
+    
+  </body>
+</html>
