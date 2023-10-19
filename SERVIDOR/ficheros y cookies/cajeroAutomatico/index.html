@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Gijon</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Banco</h1>
+    <div class="containerTabla">
+        <table>
+            <thead>
+                <tr>
+                    <td>ID Cuenta</td>
+                    <td>Nº Cuenta</td>
+                    <td>Saldo</td>
+                    <td>Consultar informacion</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!--Espacio para cada cuenta-->
+                <tr>
+                    <td>1</td>
+                    <td>ES00000000000000000</td>
+                    <td>$$$</td>
+                    <td><button type="submit" id="botonVerCuenta">Ver cuenta</button></td>
+                </tr>
+                <!--Final de variacion, en medio otra funcion-->
+            </tbody>
+        </table>
+    </div>
+    <!--------------------------------------------------->
+    <div class="containerCrearCuenta">
+        <form action="crearCuenta.py" method="get">
+            <button type="submit" id="botonCrearCuenta">Crear cuenta</button>
+        </form>
+    </div>
+    <!--------------------------------------------------->
+    <div class="containerIngresarRetirar">
+
+        <form action="operacion.py" method="get">
+        <label for="nombre">Elige la cuenta con la que deseas operar</label>
+        <select id="selectCuenta">
+            <option value="opcion1">Opción 1</option>
+            <option value="opcion2">Opción 2</option>
+            <!-- Agrega más opciones según sea necesario -->
+        </select><br />
+
+
+        <label for="nombre">Introduce cantidad</label>
+        <input type="number" name="cantidadDinero"/><br /><br />
+
+        <label>
+            <input type="radio" name="operacion" value="ingresar"> Ingresar
+        </label>
+        <label>
+            <input type="radio" name="operacion" value="retirar"> Retirar
+        </label>
+
+        <button type="submit" id="botonRealizarOperacion">Realizar operacion</button>
+    </form>
+    </div>
+    
+</body>
+</html>

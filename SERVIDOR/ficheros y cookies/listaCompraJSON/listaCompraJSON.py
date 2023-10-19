@@ -2,8 +2,9 @@
 
 print("Content-type: text/html\n")
 
-import os, codigoHtml
+import os
 import json
+import codigoHtml
 
 #   Abrir el fichero
 try:
