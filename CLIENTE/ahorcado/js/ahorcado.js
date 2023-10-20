@@ -100,7 +100,7 @@ function changeImg() {
 
 
 function restartGameAfterDie() {
-    enableButtons();
+    enableButtons(); // llamamos a la funcion enableButtons que se encarga de poner los botones otra vez en activo
     newGame();
 }
 
@@ -108,7 +108,7 @@ function enableButtons() {
     const buttons = document.querySelectorAll(".letter-button");
     
     buttons.forEach(button => {
-        button.disabled = false;
+        button.disabled = false; // ponemos el boton en false
         button.style.backgroundColor = ""; // Reset the button color
     });
 }
