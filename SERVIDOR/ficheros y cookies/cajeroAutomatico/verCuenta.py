@@ -1,4 +1,4 @@
-#!C:\Users\Kras\AppData\Local\Programs\Python\Python311\python.exe
+#!C:\Users\zx22student3198\AppData\Local\Programs\Python\Python311\python.exe
 
 print("Content-type: text/html\n")
 

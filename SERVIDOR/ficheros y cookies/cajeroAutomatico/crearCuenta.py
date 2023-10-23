@@ -1,23 +1,23 @@
-#!C:\Users\Kras\AppData\Local\Programs\Python\Python311\python.exe
+#!C:\Users\zx22student3198\AppData\Local\Programs\Python\Python311\python.exe
 
 print("Content-type: text/html\n")
 
+#   Realizamos los imports necesarios, incluyendo el del modulo codigoHTML
 import json
 import codigoHTML
 import os
 import random
 
-
-def generar_iban():
-    
-    # Identificación del país (ES para España)
+#   Funcion para generar un numero random 
+def generar_iban(): 
+    #   Identificacipn del país
     iban = "ES"
-    
-    
+    #   recorremos el for 20 veces generando numeros random y concatenandolos al iban
     for _ in range(20):
         digito = random.randint(0, 9)
         iban += str(digito)
     
+    #   Devolvemos el iban
     return iban
 
 # Abro el fichero JSON para lectura
@@ -34,8 +34,10 @@ else:
 
 #   Guardo en numAcc el numero generado en la funcion generar_iban()
 numAcc = generar_iban() 
+#   Valor predeterminado del saldo al crear la cuenta
 saldo = 0
 
+#   Guardamos en una lista todos los datos de una cuenta
 fullAcc = [id,numAcc,saldo]
 
 #   abro el fichero json para lectura
@@ -62,8 +64,8 @@ else:
 
 
 
-
-fichero = open("datos/listaCuentas.json","wt")
+# Actualiza el archivo de cuentas
+fichero = open("datos/listaCuentas.json","w")
 fichero.write(listaJson)
 fichero.close()
 
