@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   /* border: 1px solid blue;*/
+}
+
+h1 {
+    text-align: center;
+}
+
+
+
+.containerTabla {
+    margin: 0 auto; 
+    width: 80%; 
+}
+
+table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 2em 0; 
+    box-shadow: 0.25vh 0.25vw 0.5vh 0.25vh #c4c2c2;
+}
+
+thead {
+    font-weight: bold;
+}
+
+tr, td, th {
+    font-size: 20px;
+    border: 1px solid black;
+    padding: 1em; 
+    text-align: center;
+}
+
+.botonVerCuenta {
+    font-size: 20px;
+    padding: 0.5em;
+}
+
+.containerCrearCuenta {
+    margin: 0 auto;
+    width: 80%; 
+    text-align: center; 
+    
+}
+
+#botonCrearCuenta {
+    font-size: 20px;
+    padding: 1em 2em; 
+}
+
+
+
+.containerIngresarRetirar {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    margin-top: 2em; /* Agrega un margen superior */
+    padding: 2em; /* Agrega espacio interno */
+    box-shadow: 0.25vh 0.25vw 0.5vh 0.25vh #c4c2c2;
+}
+
+#selectCuenta {
+    font-size: 18px;
+    margin-bottom: 1em; /* Espacio inferior para el select */
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em; /* Espacio inferior para las etiquetas de los inputs */
+}
+
+input[type="number"] {
+    font-size: 18px;
+    padding: 0.5em; /* Ajusta el relleno de los campos de entrada */
+    margin-bottom: 1em; /* Espacio inferior para el campo de cantidad */
+}
+
+input[type="radio"] {
+    margin-right: 0.5em; /* Espacio entre los radio buttons y las etiquetas */
+}
+
+#botonRealizarOperacion {
+    font-size: 20px;
+    padding: 1em 2em;
+    
+}
+
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: red;
+}
+
+.valid-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: rgb(3, 132, 18);
+}

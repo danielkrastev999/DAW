@@ -47,7 +47,10 @@ function getLink() {
     let enlace = document.createElement("a"); //    Creo un elemento "a" para crear el enlace
     enlace.setAttribute("href", "https://www.w3schools.com/"); //   Le doy el atributo href
     parrafo.textContent = "Visitar w3school"; // El texto que aparecerá y que al clickar te llevara a w3school
+<<<<<<< HEAD
+=======
 >>>>>>> ccc17c0d69003c407353d9bd3ba9d10af6dc100c
+>>>>>>> f8455e5c672731c28c248292c5eb9d98692d790a
 
 }
 
