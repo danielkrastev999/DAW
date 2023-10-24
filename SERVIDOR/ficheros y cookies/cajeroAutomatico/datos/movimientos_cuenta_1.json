@@ -1,1 +1,1 @@
-[{"operacion": "ingresar", "cantidad": 20, "saldo_actual": 20}, {"operacion": "ingresar", "cantidad": 30000, "saldo_actual": 30020}]
+[{"operacion": "ingresar", "cantidad": 20, "saldo_actual": 20}, {"operacion": "ingresar", "cantidad": 30000, "saldo_actual": 30020}, {"operacion": "ingresar", "cantidad": 20, "saldo_actual": 30040}]
