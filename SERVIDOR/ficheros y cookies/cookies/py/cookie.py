@@ -1,6 +1,7 @@
 #!C:\Users\zx22student3198\AppData\Local\Programs\Python\Python311\python.exe
 
-import http.cookies, os
+import http.cookies 
+import os
 
 from urllib.parse import parse_qs
 
