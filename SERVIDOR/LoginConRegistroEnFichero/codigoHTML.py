@@ -38,11 +38,7 @@ def Error(texto):
         <body>
             <div class="error-container">
                 <h1>Error</h1>
-                <h3>
-          """)
-    print(texto) # MUESTRO UN ERROR CONCRETO TRAIDO POR PARAMETRO
-    ("""
-                </h3>
+                <h3>"""+texto+"""</h3>
             </div>
         </body>
         </html>
@@ -91,8 +87,9 @@ def irAPagina1():
     """)
 
 
-def Aplicacion(texto):
-    print("""
+def Aplicacion(texto, enlace):
+    print('''Content-type: text/html\n
+          
         <!DOCTYPE html>
         <html lang="en">
 
@@ -101,18 +98,17 @@ def Aplicacion(texto):
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
            <!-- <meta http-equiv="refresh" content="3;index.html"> --> <!--recarga pag a los 3 seg-->
             <title>Login con registro en fichero</title>
-          <link rel="stylesheet" href="css/style.css">
-            </head>
+        </head>
 
         <body>
-            <div class="error-container">
                 <h1>wow maquina</h1>
-                <h3>
-          """)
-    print(texto) # MUESTRO UN ERROR CONCRETO TRAIDO POR PARAMETRO
-    ("""
-                </h3>
-            </div>
+                
+                <h3>'''+texto+'''</h3>
+
+                
+            <a href='''+enlace+'''>enlace a otra pagina</a>
+            <br />  
+            <a href="logout.py"> Salir de la aplicacion</a>
         </body>
         </html>
-    """)
+    ''')

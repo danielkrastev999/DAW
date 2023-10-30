@@ -35,6 +35,7 @@ if "password" not in param:
 nombre = param["nombre"][0]
 password = param["password"][0]
 
+#   2.1 Encriptamos contraseña para compararla con la que tenemos guardada en el fichero
 passEncriptado = hashlib.sha512(str.encode(password)).hexdigest()
 
 #   3 CARGAMOS EL FICHERO JSON DENTRO DE 'listaUsuarios'
@@ -56,13 +57,15 @@ for usu in listaUsuarios:
         usuarioEncontrado = True 
         break # si no pongo el break, se queda registrada en usu, el ultimo usuario, no el que he encontrado que es igual
 
+#   5. Comprobar si el usuario no se encontro para sacar el mensaje de error
 if not usuarioEncontrado:
         codigoHTML.Error("Usuario no encontrado o password incorrecta")
         exit()
 
 ##################################################################
-
+#manolo malone melon
 #   INICIO DE LAS COOKIES
+
 print("Content-type: text/html")
 cookie = http.cookies.SimpleCookie() 
 cookie["ID1"] = uuid.uuid4() # lo que tendra la cookie dentro (genera ids aleatorios)
@@ -70,6 +73,7 @@ cookie["ID1"] = uuid.uuid4() # lo que tendra la cookie dentro (genera ids aleato
 print(cookie)
 print()
 
+##################################################################
 
 # DONDE IR SI HACE LOGIN EL USUARIO
 codigoHTML.irAPagina1()
