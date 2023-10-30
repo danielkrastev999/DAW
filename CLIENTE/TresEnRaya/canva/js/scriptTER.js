@@ -7,8 +7,13 @@ let largo;
 let jugador = 0;
 let numJugadas = 0;
 let partidaFinalizada = false;
+let tablero = [ 
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0]
+            ];
 
-function inicio(argument){
+function inicio(argument) {
     canvas = document.getElementById("miCanvas");
     context = canvas.getContext("2d");
 
@@ -17,180 +22,131 @@ function inicio(argument){
 
     pintarTablero();
 
-    //  Evento para capturar los clicks en el canvas
-    canvas.addEventListener('click',function(event){jugada(event)})
+    // Evento para capturar los clicks en el canvas
+    canvas.addEventListener('click', function (event) {
+        jugada(event);
+    });
 }
 
-function pintarTablero(){
-    //  Crear un rectangulo relleno de color gris
-    //  2 primeros parametros: esquina arriba-izquierda | 2 ultimos: ancho y alto del rectangulo
-    context.fillStyle = 'grey';
-    context.fillRect(0,0,ancho,largo)
-    
-    //  Crea 9 circulos blancos
+function pintarTablero() {
+    // Fondo del tablero (casi negro)
+    context.fillStyle = '#222422'; // Establece el color de fondo casi negro
+    context.fillRect(0, 0, ancho, largo);
+
     let color = 'white';
-    for(xCentro of [100,300,500]){
-        for(yCentro of [100,300,500]){
-            pintaCirculo(xCentro,yCentro,color);
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            pintaCirculo(i, j, color);
         }
     }
 }
 
-function pintaCirculo(xCentro,yCentro,color){
-    //  Crear un circulo con los primeros parámetros coordenadas del centro, radio, inicio y fin del arco
+function pintaCirculo(x, y, color) {
     context.beginPath();
     context.fillStyle = color;
-    context.arc(xCentro,yCentro,90,0,Math.PI*2);
+    context.arc((100 + x * 200),(100 + y * 200), 90, 0, Math.PI * 2);
     context.closePath();
     context.fill();
 }
 
-function jugada(evento){
-    let x = Math.floor(evento.clientX - canvas.getBoundingClientRect().left); //    Obtiene la coordenada X donde pulso el jugador en el canvas
-    let y = Math.floor(evento.clientY - canvas.getBoundingClientRect().top);//      Obtiene la coordenada Y donde pulso el jugador en el canvas
-    
+
+function jugada(evento) {
+    if (partidaFinalizada) {
+        return; // No permitir más jugadas si la partida ha terminado
+    }
+
+    let x = Math.floor(evento.clientX - canvas.getBoundingClientRect().left);
+    let y = Math.floor(evento.clientY - canvas.getBoundingClientRect().top);
+
     numJugadas++;
-    
-    console.log("X: "+ x + " -  Y: " + y);
-    console.log("---------------------------------------");
-    
-    console.log("JUGADOR "+jugador);
-    console.log("Numero de jugada: "+numJugadas);
+    console.log("numero de jugada: "+ numJugadas);
 
-    let posX = x/100;
-    console.log(posX);
+    let posX = Math.floor(x / 200);
+    let posY = Math.floor(y / 200);
 
-    let posY = y/100;
-    console.log(posY);
+    //  Si la casilla esta vacia..
+    if (tablero[posY][posX] === 0) {// Verificar si la casilla está vacía
+        tablero[posY][posX] = jugador + 1; // Marcar la casilla con el jugador actual
 
-    console.log("---------------------------------------");
-
-    if (posX >= 0 && posX <= 2){
-        if(posY >= 0 && posY <= 2){ //circulo arriba izquierda
-            if (jugador == 1){
-                pintaCirculo(100,100,'#A50044')
-                jugador = 0;
-            }
-            else{
-                pintaCirculo(100,100,'#004D98')
-                jugador = 1;
-            }
-            
+        //   Comprobar que jugador es y pintar la casilla
+        if (jugador === 0) {
+            pintaCirculoJugador(posX, posY, '#A50044'); // Jugador 1
+            jugador = 1; // Cambio de jugador
+        } else {
+            pintaEquisJugador(posX, posY, '#004D98'); // Jugador 2
+            jugador = 0; // Cambio de jugador
         }
-        else if(posY >= 2 && posY <= 4){
-            if (jugador == 1){
-                pintaCirculo(100,300,'#A50044')
-                jugador = 0;
-            }
-            else{
-                pintaCirculo(100,300,'#004D98')
-                jugador = 1;
-            }
-        }
-        else if(posY >= 5 && posY <= 7){
-            if (jugador == 1){
-                pintaCirculo(100,500,'#A50044')
-                jugador = 0;
-            }
-            else{
-                pintaCirculo(100,500,'#004D98')
-                jugador = 1;
-            }
-        }
-    }
-    else if (posX >= 2 && posX <= 4){
-        if(posY >= 0 && posY <= 2){ //circulo arriba izquierda
-            if (jugador == 1){
-                pintaCirculo(300,100,'#A50044')
-                jugador = 0;
-            }
-            else{
-                pintaCirculo(300,100,'#004D98')
-                jugador = 1;
-            }
-        }
-        else if(posY >= 2 && posY <= 4){
-            if (jugador == 1){
-                pintaCirculo(300,300,'#A50044')
-                jugador = 0;
-            }
-            else{
-                pintaCirculo(300,300,'#004D98')
-                jugador = 1;
-            }
-        }
-        else if(posY >= 5 && posY <= 7){
-            if (jugador == 1){
-                pintaCirculo(300,500,'#A50044')
-                jugador = 0;
-            }
-            else{
-                pintaCirculo(300,500,'#004D98')
-                jugador = 1;
-            }
-        }
-    }
-    else if (posX >= 5 && posX <= 7){
-        if(posY >= 0 && posY <= 2){ //circulo arriba izquierda
-            if (jugador == 1){
-                pintaCirculo(500,100,'#A50044')
-                jugador = 0;
-            }
-            else{
-                pintaCirculo(500,100,'#004D98')
-                jugador = 1;
-            }
-        }
-        else if(posY >= 2 && posY <= 4){
-            if (jugador == 1){
-                pintaCirculo(500,300,'#A50044')
-                jugador = 0;
-            }
-            else{
-                pintaCirculo(500,300,'#004D98')
-                jugador = 1;
-            }
-        }
-        else if(posY >= 5 && posY <= 7){
-            if (jugador == 1){
-                pintaCirculo(500,500,'#A50044')
-                jugador = 0;
-            }
-            else{
-                pintaCirculo(500,500,'#004D98')
-                jugador = 1;
-            }
-        }
+    } else {
+        numJugadas--;// Resto una jugada por si hace click en una casilla ocuopada
+        return; // No permito una jugada nueva en una casilla ocupada
     }
 
-    if (numJugadas >= 5){
-        if(hayGanador()){
-            //mensaje de final de partida
-            partidaFinalizada = true
-        }
-        else if (numJugadas == 9){
-            //empate
-            partidaFinalizada = true
-        }
-    }
-    console.log("no has ganado todavia");
-    hayGanador(posX,posY)
-
-}
-
-function hayGanador(posX,posY){
-
-
-    if ((posX >= 0 && posX <= 2) && (posY >= 0 && posY <= 2)){
-        if((posX >= 0 && posX <= 2) && (posY >= 3 && posY <= 5)){
-            if ((posX >= 0 && posX <= 2) && (posY >= 5 && posY <= 7)){
-                console.log("has ganado");
-            }
+    if (numJugadas >= 5) { //   Despues de la 4 jugada, empezamos a comprobar si hay ganador
+        if (hayGanador()) { //  Si hay ganador es true
+            //  Mostramos en la pantalla un mensaje con el jugador que ha ganado usando un operador ternario
+            document.getElementById("resultado").innerHTML = "¡El jugador " + (jugador === 0 ? 2 : 1) + " ha ganado!";
+            partidaFinalizada = true; //    Finalizamos la partida
+        } else if (numJugadas === 9) { //   Si llegamos a 9 jugadas, se termina la partida
+            document.getElementById("resultado").innerHTML = "¡Empate!";
+            partidaFinalizada = true; //    Finalizamos la partida
         }
     }
 }
 
+function hayGanador() {
+    // Comprobaciones de filas
+    for (let i = 0; i < 3; i++) {
+        //  La primera comprobacion es para saber que no hay casillas vacias
+        //  Si en una fila, todas las posiciones son de un jugador, devuelvo true, osea que ya hay ganador
+        if (tablero[i][0] !== 0 && tablero[i][0] === tablero[i][1] && tablero[i][0] === tablero[i][2]) {
+            return true;
+        }
+    }
 
+    // Comprobaciones de columnas
+    for (let i = 0; i < 3; i++) {
+        //  Si en todas las columnas... lo mismo que arriba
+        if (tablero[0][i] !== 0 && tablero[0][i] === tablero[1][i] && tablero[0][i] === tablero[2][i]) {
+            return true;
+        }
+    }
 
+    // Comprobaciones de diagonales, lo mismo que en las anteriores pero estas individualmente 
+    if (tablero[0][0] !== 0 && tablero[0][0] === tablero[1][1] && tablero[0][0] === tablero[2][2]) {
+        return true;
+    }
+    if (tablero[0][2] !== 0 && tablero[0][2] === tablero[1][1] && tablero[0][2] === tablero[2][0]) {
+        return true;
+    }
 
-// si es 0 o 1 la coordenada es 100
+    return false;
+}
+
+//  Dibujar O y X
+function pintaCirculoJugador(x, y, color) {
+    context.beginPath();
+    context.strokeStyle = color; // Usamos strokeStyle para establecer el color del borde
+    context.lineWidth = 20; // Establecemos el grosor del borde a 20
+    context.arc(100 + x * 200, 100 + y * 200, 70, 0, Math.PI * 2); // Reducimos el radio a 70 para hacer el círculo más pequeño
+    context.closePath();
+    context.stroke(); // Usamos stroke en lugar de fill para pintar solo el borde
+}
+
+function pintaEquisJugador(x, y, color) {
+    context.strokeStyle = color; // Usamos strokeStyle para establecer el color del borde
+    context.lineWidth = 20; // Establecemos el grosor del borde a 20
+    
+    // Dibujar la primera línea de la equis
+    context.beginPath();
+    context.moveTo(100 + x * 200 - 60, 100 + y * 200 - 60);
+    context.lineTo(100 + x * 200 + 60, 100 + y * 200 + 60);
+    context.closePath();
+    context.stroke();
+    
+    // Dibujar la segunda línea de la equis
+    context.beginPath();
+    context.moveTo(100 + x * 200 + 60, 100 + y * 200 - 60);
+    context.lineTo(100 + x * 200 - 60, 100 + y * 200 + 60);
+    context.closePath();
+    context.stroke();
+}

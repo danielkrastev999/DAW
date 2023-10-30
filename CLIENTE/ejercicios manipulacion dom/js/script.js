@@ -28,29 +28,27 @@ function getList(){
     miLista.appendChild(elementosLista);
 }
 
-<<<<<<< HEAD
+
 function getLink(){
     let miDiv2 = document.getElementById("miDiv2");
-
     let enlace = document.createElement("a");
+    
     enlace.setAttribute("href", "https://www.w3schools.com/");
-
-    let parrafo = document.createElement("p");
     parrafo = "Visitar w3school ";
 
     enlace.innerHTML = parrafo;
     miDiv2.appendChild(enlace);
-=======
+
 function getLink() {
     let miDiv2 = document.getElementById("miDiv2"); //    Guardo en miDiv2 el elemento con id miDiv2 del html
     let parrafo = document.createElement("p"); //   Creo un parrafo
     let enlace = document.createElement("a"); //    Creo un elemento "a" para crear el enlace
     enlace.setAttribute("href", "https://www.w3schools.com/"); //   Le doy el atributo href
     parrafo.textContent = "Visitar w3school"; // El texto que aparecerá y que al clickar te llevara a w3school
-<<<<<<< HEAD
-=======
->>>>>>> ccc17c0d69003c407353d9bd3ba9d10af6dc100c
->>>>>>> f8455e5c672731c28c248292c5eb9d98692d790a
+
+    enlace.appendChild(parrafo); // Añado el elemento parrafo al enlace
+    miDiv2.appendChild(enlace); //  Añado el elemento enlace a miDiv2
+
 
 }
 
@@ -99,7 +97,7 @@ function getOpacity(){
     }
 }
 
-<<<<<<< HEAD
+
 function changeFontColor(){
     let textoCambiante = document.getElementById("textoCambiante");
 
@@ -107,16 +105,15 @@ function changeFontColor(){
 
     textoCambiante.onmouseout = function(){
         textoCambiante.style.color = "maroon";
-=======
+
 //  Funcion que solo se ejecuta cuando el mouse pasa por encima
 function changeParagraphColor(){
-    let textoCambiante = document.getElementById("textoCambiante") ;//  Guardo en textoCambiante el elemento con id textoCambiante del html
+    let textoCambiante = document.getElementById("textoCambiante");//  Guardo en textoCambiante el elemento con id textoCambiante del html
         textoCambiante.style.color = 'BlueViolet';  //  le cambio el color  al parrafo
     
     //  Funcion interna que se ejecuta cuando el mouse se va fuera del parrafo
     textoCambiante.onmouseout = function(){
         textoCambiante.style.color = 'maroon';  // cambia el color al original
->>>>>>> ccc17c0d69003c407353d9bd3ba9d10af6dc100c
-    }
 
-}
+    }
+}}}}
