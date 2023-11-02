@@ -123,6 +123,7 @@ function hayGanador() {
     return false;
 }
 
+
 //  Dibujar O y X
 function pintaCirculoJugador(x, y, color) {
     context.beginPath();
