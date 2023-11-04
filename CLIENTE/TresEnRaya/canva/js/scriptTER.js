@@ -58,8 +58,7 @@ function jugada(evento) {
     let x = Math.floor(evento.clientX - canvas.getBoundingClientRect().left);
     let y = Math.floor(evento.clientY - canvas.getBoundingClientRect().top);
 
-    numJugadas++;
-    console.log("numero de jugada: "+ numJugadas);
+    
 
     let posX = Math.floor(x / 200);
     let posY = Math.floor(y / 200);
@@ -67,7 +66,9 @@ function jugada(evento) {
     //  Si la casilla esta vacia..
     if (tablero[posY][posX] === 0) {// Verificar si la casilla está vacía
         tablero[posY][posX] = jugador + 1; // Marcar la casilla con el jugador actual
-
+        
+        numJugadas++;
+        console.log("numero de jugada: "+ numJugadas);
         //   Comprobar que jugador es y pintar la casilla
         if (jugador === 0) {
             pintaCirculoJugador(posX, posY, '#A50044'); // Jugador 1
@@ -77,7 +78,7 @@ function jugada(evento) {
             jugador = 0; // Cambio de jugador
         }
     } else {
-        numJugadas--;// Resto una jugada por si hace click en una casilla ocuopada
+        //numJugadas--;// Resto una jugada por si hace click en una casilla ocuopada
         return; // No permito una jugada nueva en una casilla ocupada
     }
 
