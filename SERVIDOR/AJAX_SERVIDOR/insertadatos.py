@@ -39,6 +39,7 @@ insert = f'INSERT INTO datos (dato1, dato2) VALUES ("{t}",{n})'
 #   Ejecutar el insert
 mi_cursor.execute(insert)
 
+#   Obligatorio el commit
 midb.commit()
 
 
