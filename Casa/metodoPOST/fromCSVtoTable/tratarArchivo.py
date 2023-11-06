@@ -5,37 +5,43 @@ import cgi
 import cgitb; cgitb.enable()
 import csv
 
-tabla = []
-
-#   Obtener los datos del archivo 
-form = cgi.FieldStorage()
 
 print("Content-Type: text/html\n")
 
-fileitem = form["filename"]
 
-#   Comprobar si el fichero ha sido subido
-if fileitem.filename:
-    #   Obtener el nombre del fichero que me han enviado
-    fn = os.path.basename(fileitem.filename)
+def guardarDatosCSV():
+    #   Obtener los datos del archivo 
+    form = cgi.FieldStorage()
 
-    #   Escribo en ese fichero el contenido que se ha subido
-    open("ficheros/"+fn, "wb").write(fileitem.file.read()) # Se puede cambiar el nombre del nuevo fichero open("img/foto_"+fn, "wb")
+    fileitem = form["filename"]
 
-    #   Metodo para leer y separar la infomracion de un CSV, almacenando cada linea en una lista, y esta dentro de una lista general
-    with open('ficheros/'+fn, newline='') as File:  
-        reader = csv.reader(File, delimiter=';')
-        # Recorro todo el contenido del fichero csv
-        for fila in reader:
-            #   Añado el contenido a la lista 'tabla'
-            tabla.append(fila)
+    #   Comprobar si el fichero ha sido subido
+    if fileitem.filename:
+        #   Obtener el nombre del fichero que me han enviado
+        fn = os.path.basename(fileitem.filename)
 
+        # Escribir el contenido del archivo subido en un nuevo archivo en el directorio "ficheros"
+        with open("ficheros/" + fn, "wb") as newfile:
+            newfile.write(fileitem.file.read())
 
+        #   Metodo para leer y separar la infomracion de un CSV, almacenando cada linea en una lista, y esta dentro de una lista general
+        with open('ficheros/'+fn, newline='') as File:  
+            reader = csv.reader(File, delimiter=';')
+            data = list(reader)
+
+        return data    
+    return[]
+
+data = guardarDatosCSV()
+
+###############################################################################
+
+# TABLA COMPLETA
 
 # empiezo a pintar la tabla
 print("<table border='1' style='border-collapse:collapse; text-align:center;'>") 
 
-for fila in tabla:# Recorro cada lista dentro de la lista general
+for fila in data:# Recorro cada lista dentro de la lista general
     print("<tr>") # Pinto un tr
     for celda in fila: #    Recorro el contenido de las lista 
         print(f"<td>{celda}</td>") #    Pinto un cada contenido de la lista dentro de un td y cierro
@@ -49,10 +55,12 @@ print("<br />")
 # SOLO NOMBRES DE EQUIPOS Y PUNTOS  ----- lista y tabla 
 ###############################################################################
 
+# LISTA DEL PRIMER Y ULTIMO CAMPO
+
 print("<ul>")  # Empiezo a pintar la lista desordenada (ul)
 print("<li style='font-weight: bold'>EQUIPO : PUNTOS</li>")
 
-for fila in tabla:  # Recorro cada lista dentro de la lista general
+for fila in data:  # Recorro cada lista dentro de la lista general
     equipo = fila[0]  # El nombre del equipo se encuentra en la primera posición
     puntos = fila[-1]  # Los puntos se encuentran en la última posición
     if equipo == "Equipo":
@@ -64,9 +72,11 @@ print("<br />")
 
 ###############################################################################
 
+# TABLA CON SOLO EL PRIMER Y ULTIMO CAMPO
+
 print("<table border='1' style='border-collapse:collapse'>") 
 
-for fila in tabla:
+for fila in data:
     print("<tr>")
     equipo = fila[0]
     puntos = fila[-1]
@@ -80,3 +90,4 @@ for fila in tabla:
     print("</tr>")
 
 print("</table>") 
+

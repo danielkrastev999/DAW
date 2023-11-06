@@ -1,8 +1,9 @@
-#!C:\Users\zx22student3198\AppData\Local\Programs\Python\Python311\python.exe
+#!C:\Users\Kras\AppData\Local\Programs\Python\Python311\python.exe
 
 import sys
 import json
 import mysql.connector
+import mysql
 
 #   Mensajes de error que escribo yo en el error log al entrar
 sys.stderr.write("Dentro de pedirdatos.py --------------------- \n")
@@ -13,9 +14,9 @@ sys.stderr.write("Dentro de pedirdatos.py --------------------- \n")
 #   Crear la conexion
 midb = mysql.connector.connect( 
     host="localhost",
-    user="pruebaAjax",
-    password="pruebaAjax",
-    database="pruebaAjax"
+    user="daniel",
+    password="daniel",
+    database="daniel"
 )
 
 #   cursor: objeto para generar peticiones a la base de datos

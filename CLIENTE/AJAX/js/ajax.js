@@ -36,7 +36,7 @@ function llamadaAjax(){
     *******************************************************************/
 
     //  Contruir la peticion
-    httpRequest.open("GET", "/SERVIDOR/AJAX_SERVIDOR/pedirdatos.py", true);
+    httpRequest.open("GET", "/daw/SERVIDOR/AJAX_SERVIDOR/pedirdatos.py", true);
 
     //  Ejecuto la peticion
     httpRequest.send();
@@ -52,7 +52,7 @@ function insertaAjax(){
     let httpRequest = new XMLHttpRequest();
 
     // construyo la peticion con los valores que recibo
-    let peticion = "/SERVIDOR/AJAX_SERVIDOR/insertadatos.py?texto="+texto+"&numero="+numero;
+    let peticion = "daw/SERVIDOR/AJAX_SERVIDOR/insertadatos.py?texto="+texto+"&numero="+numero;
 
 
     httpRequest.onreadystatechange = function(){
