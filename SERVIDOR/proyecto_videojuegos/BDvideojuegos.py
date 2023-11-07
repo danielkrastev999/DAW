@@ -81,6 +81,48 @@ class BDVideojuegos:
         #   Cerramos el cursor 
         mi_cursor.close()
 
-    
+    def insertar(self, nombre, empresa, tematica, numJug, anio):
+        #   cursor: objeto para generar peticiones a la base de datos
+        mi_cursor = self.bdconx.cursor() 
+
+        #   Crear el texto de la consulta
+        consulta = "INSERT INTO videojuegosantiguos (nombre, empresa, tematica, numero_de_jugadores,publicacion) VALUES (%s,%s,%s,%s,%s)"
+        
+        #necesitamos los valores para insertarlos, los guardamos en una tupla 
+        val = (nombre, empresa, tematica, numJug, anio)
+
+
+        #   Ejecutar la consulta
+        mi_cursor.execute(consulta,val)
+
+        self.bdconx.commit()
+
+        #   Cerramos el cursor 
+        mi_cursor.close()
+
+
+    def seleccionaPorId(self,id):
+        #   cursor: objeto para generar peticiones a la base de datos
+        mi_cursor = self.bdconx.cursor() 
+
+        #   Crear el texto de la consulta
+        consulta = f"SELECT * FROM videojuegosantiguos WHERE id = {id}"
+
+        #   Traza para ver el objeto mi_resultado en el error log
+        sys.stderr.write(f"========================={consulta}=============================")
+
+        #   Ejecutar la consulta
+        mi_cursor.execute(consulta)
+
+        #fetchone porque solo vamos a traer un resultado
+        #te devuelve solo la tupla, sin la lista que envuelve fetchall()
+        mi_resultado = mi_cursor.fetchone()
+
+        #   Cerramos el cursor 
+        mi_cursor.close()
+
+        return mi_resultado
+
+
     def cerrarBD(self):
         self.bdconx.close()
