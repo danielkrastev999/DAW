@@ -36,7 +36,5 @@ else:
     HtmlVideojuegos.error("Algun parametro no es correcto jejej")
 
 
-
-
 # cerrar conexion base de datos
 bd.cerrarBD()

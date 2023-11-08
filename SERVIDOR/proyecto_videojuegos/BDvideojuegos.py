@@ -124,5 +124,22 @@ class BDVideojuegos:
         return mi_resultado
 
 
+    def modificar(self, id, nombre, empresa, tematica, numero_de_jugadores, publicacion):
+        #crear un cursor para hacer la consulta
+        micursor = self.bdconx.cursor()
+
+        #crear el texto de la consulta
+        consulta = "UPDATE videojuegosantiguos SET nombre=%s,empresa=%s,tematica=%s,numero_de_jugadores=%s,publicacion=%s WHERE id=%s"
+        val = (nombre, empresa, tematica, int(numero_de_jugadores), int(publicacion), int(id))
+
+        #ejecutar la consulta
+        micursor.execute(consulta,val)
+
+        self.bdconx.commit()
+
+        #cerrar cursor y conexion
+        micursor.close()
+
+
     def cerrarBD(self):
         self.bdconx.close()
