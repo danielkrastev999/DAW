@@ -2,8 +2,11 @@
 
 from BDvideojuegos import BDVideojuegos
 import HtmlVideojuegos
+import sys
 
 print("Content-type: text/html\n")
+
+
 
 bd = BDVideojuegos()
 

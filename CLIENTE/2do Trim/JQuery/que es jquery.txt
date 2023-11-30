@@ -1,0 +1,48 @@
+JQUERY
+
+La sintaxis cambia en cuanto a JS
+
+-----------------------------------
+ejercicios de examen:
+- html/dom manipulation
+- (la que estaba debajo en w3school)
+- Ajax
+-----------------------------------
+
+Descargar jquery (guardar como) en la carpeta del proyecto y cargar libreria:
+<script type="text/javacript" src="js/jquery-3.7.1.min.js"></script>
+
+y debajo pondremos nuestro JS
+
+***********************************
+3 Formas de hacer el onload con JQuery:
+
+$(principal);
+
+$(function()){
+    alert("otra forma");
+};
+
+$(document).ready(function(){
+    alert("yweeeeeeeeeeeeeeeee");
+});
+
+************************************
+
+Si tengo partes que ya puedo ir tratando como:
+    $("#p1").ready(alert("parrafo accesible"))
+
+Se ejecutara antes que el 'onload'
+
+*************************************
+
+Cuando todos los parrafos esten creados, lanza el alert:
+    $("p").ready(alert("parrafos"))
+
+*************************************
+
+Cambiar el contenido del elemento que he pulsado, en este caso el boton
+    this.innerHTML = "cambiado";
+    this.style.background="red";
+
+    $(this).hide();

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostrar Datos Array en Tabla</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 30%;
+      
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="button" value="Ver los datos del fichero" onclick="procesarDatos()">
+  <table id="tablaDatos">
+    <thead>
+      <!-- La cabecera se llenará dinámicamente con los nombres de los campos -->
+    </thead>
+    <tbody>
+      <!-- Los datos se llenarán dinámicamente aquí -->
+    </tbody>
+  </table>
+
+
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

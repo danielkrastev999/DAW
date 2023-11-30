@@ -1,0 +1,18 @@
+let numbers = [1,2,3,4,5]
+let maximum = Math.max(...numbers) // Desempaqueta arrays
+
+let numbers2 = [6,7,8,9]
+
+let numers.push(...numbers2); 
+// numbers = 1,2,3,4,5,6,7,8,9
+si no ponemos los tres puntos
+// numbers = 1,2,3,4,[5,6,7,8,9]
+
+___________________________
+
+let userName;
+do{
+	userName = prompt("Escribe tu nombre");
+}while(userName == "" || userName == null)
+
+clg("Hello "+userName)

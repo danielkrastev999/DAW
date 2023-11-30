@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Objects</h2>
+
+<p>Using an object constructor:</p>
+
+<p id="demo"></p>
+
+<script>
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+const myFather = new Person("John", "Doe", 50, "blue");
+const myMother = new Person("Sally", "Rally", 48, "green");
+
+// We also learned that you can not add a new property to an existing object constructor:
+
+
+//      Prototype Inheritance
+
+// The JavaScript prototype property allows you to add new properties to object constructors:
+Person.prototype.nationality = "English";
+
+document.getElementById("demo").innerHTML =
+"The nationality of my father is " + myFather.nationality; 
+
+// and new methods
+Person.prototype.name = function() {
+  return this.firstName + " " + this.lastName;
+};
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.name(); 
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios DOM</title>
+</head>
+<body>
+    <!-- Ejercicio 1 Eliminar Elemento al hacer clic: -->
+    <button type="submit" onclick="removeElement()">Eliminar Elemento</button>
+    <div id="elementToRemove">¡Soy el elemento a eliminar!</div>
+
+    <hr><!-- Ejercicio 2 Cambiar Imagen al hacer clic:-->
+    <button type="submit" onclick="changeImage()">Cambiar Imagen</button>
+    <img id="imageToChange" src="img/juice.jpg" alt="Imagen 1">
+
+    <hr><!-- Ejercicio 3 Contador de Clics:-->
+    <button type="submit" onclick="incrementClicks()">Contador de Clics</button>
+    <button type="submit" onclick="resetClicks()">Resetear Clics</button>
+    <p id="clickCounter">Clics: 0</p>
+
+    <hr><!-- Ejercicio 4 Cambiar Estilos Dinámicamente:-->
+    <button type="submit" onclick="changeStyles()">Cambiar Estilos</button>
+    <p id="styledElement">¡Cambia mis estilos!</p>
+
+
+
+    <hr><!-- Ejercicio 5 Reloj en Tiempo Real:-->
+    <div id="realTimeClock">00:00:00</div>
+
+    <hr><!-- Ejercicio 6 Lista Desplegable Dinámica:-->
+    <select id="firstDropdown" onchange="updateSecondDropdown()">
+        <option value="1">Opción 1</option>
+        <option value="2">Opción 2</option>
+        <option value="3">Opción 3</option>
+    </select>
+    <select id="secondDropdown"></select>
+
+    <hr><!-- Ejercicio 7 Ordenar una Lista:-->
+    <button type="submit" onclick="sortList()">Ordenar Lista</button>
+    <ul id="sortableList">
+        <li>Manzana</li>
+        <li>Uva</li>
+        <li>Andrea</li>
+        <li>Naranja</li>
+    </ul>
+
+    <hr><!-- Ejercicio 8 Arrastrar y Soltar:-->
+    <div id="draggableElement" draggable="true" ondragstart="drag(event)" style="width: 150px;height: 50px;border: 1px solid red;text-align: center;">¡Arrástrame!</div>
+    <div id="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)" style="width: 150px;height: 150px;border: 1px solid black;text-align: center;">¡Suelta aquí!</div>
+
+    <hr><!-- Ejercicio 9 Cambiar Color de Fondo al pasar el Ratón:-->
+    <p id="backgroundChange" onmouseover="changeBackgroundColor(true)" onmouseout="changeBackgroundColor(false)">Pasa el ratón para cambiar el color de fondo</p>
+
+    <hr><!-- Ejercicio 11 -->
+    <button type="submit" onclick="toggleVisibility()">Ocultar/mostrar</button>
+    <div id="toggleElement" style="width: 100px; height: 100px; background-color: lightblue;"></div>
+
+    <hr><!-- Ejercicio 12 -->
+    <button type="submit" onclick="rotateElement()">Rotar Elemento</button>
+    <div id="rotateElement" style="width: 50px; height: 50px; background-color: coral;"></div>
+
+    <hr><!-- Ejercicio 13 -->
+    <button type="submit" onclick="changeText()">Cambiar Texto</button>
+    <p id="textElement">Haz clic para cambiar este texto</p>
+
+    <hr><!-- Ejercicio 14 -->
+    <button type="submit" onclick="createAlert()">Crear Alerta</button>
+
+    <hr><!-- Ejercicio 15 -->
+    <button type="submit" onclick="changeTextColor()">Cambiar Color de Texto</button>
+    <p id="textColorElement" style="color: green;">Este texto puede cambiar de color</p>
+
+    <hr><!-- Ejercicio 16 -->
+    <button type="submit" onclick="playAudio()">Reproducir Sonido</button>
+    <audio id="audioElement" src="illojuan.mp3"></audio>
+
+    <hr><!-- Ejercicio 17 -->
+    <button type="submit" onclick="shakeElement()">Sacudir Elemento</button>
+    <div id="shakeElement" style="width: 80px; height: 80px; background-color: lightcoral;"></div>
+
+    <hr><!-- Ejercicio 18 -->
+    <button type="submit" onclick="resizeElement()">Redimensionar Elemento</button>
+    <div id="resizeElement" style="width: 100px; height: 50px; background-color: gold;"></div>
+
+    <hr><!-- Ejercicio 19 -->
+    <button type="submit" onclick="changeBackgroundImage()">Cambiar Imagen de Fondo</button>
+    <div id="backgroundImageElement" style="width: 200px; height: 150px; background-image: url('img/juice.jpg'); background-size: cover;"></div>
+
+    <hr><!-- Ejercicio 20 -->
+    <button type="submit" onclick="generateRandomColor()">Generar Color Aleatorio</button>
+    <div id="randomColorElement" style="width: 100px; height: 100px;"></div>
+
+    <hr><!-- Ejercicio 21 -->
+    <button type="submit" onclick="copyText()">Copiar Texto</button>
+    <input type="text" id="copyTextElement" value="Texto a copiar">
+
+    <hr><!-- Ejercicio 22 -->
+    <button type="submit" onclick="showDate()">Mostrar Fecha Actual</button>
+    <p id="dateElement"></p>
+
+    <hr><!-- Ejercicio 23 -->
+    <button type="submit" onclick="changeFontFamily()">Cambiar Familia de Fuentes</button>
+    <p id="fontFamilyElement">Este texto puede cambiar de fuente</p>
+
+    <hr><!-- Ejercicio 24 -->
+    <button type="submit" onclick="toggleFullScreen()">Alternar Pantalla Completa</button>
+
+    <hr><!-- Ejercicio 25 -->
+    <button type="submit" onclick="scrollToTop()">Desplazarse hacia Arriba</button>
+
+    <hr><!-- Ejercicio 26 -->
+    <button type="submit" onclick="changeCursor()">Cambiar Tipo de Cursor</button>
+    <div id="cursorElement" style="width: 100px; height: 50px; background-color: lightgreen;"></div>
+
+    <hr><!-- Ejercicio 27 -->
+    <button type="submit" onclick="toggleBackgroundColor()">Alternar Color de Fondo</button>
+    <div id="backgroundToggleElement" style="width: 100px; height: 100px;"></div>
+
+    <hr><!-- Ejercicio 28 -->
+    <button type="submit" onclick="showRandomQuote()">Mostrar Cita Aleatoria</button>
+    <p id="quoteElement"></p>
+
+    <hr><!-- Ejercicio 29 -->
+    <button type="submit" onclick="countdownTimer()">Temporizador de Cuenta Regresiva</button>
+    <p id="countdownElement"></p>
+
+    <hr><!-- Ejercicio 30 -->
+    <button type="submit" onclick="changeElementBorder()">Cambiar Borde del Elemento</button>
+    <div id="borderElement" style="width: 100px; height: 100px; background-color: #ffcccb;"></div>
+
+    <!-- Ejercicio 31 -->
+    <hr><button type="submit" onclick="toggleElementSize()">Alternar Tamaño del Elemento</button>
+    <div id="sizeToggleElement" style="width: 100px; height: 100px; background-color: lightyellow;"></div>
+
+    <hr><!-- Ejercicio 32 -->
+    <button type="submit" onclick="toggleElementContent()">Alternar Contenido del Elemento</button>
+    <p id="contentToggleElement">Este texto puede cambiar</p>
+
+    <hr><!-- Ejercicio 33 -->
+    <button type="submit" onclick="disableButton()">Deshabilitar Botón</button>
+    <button id="disableButton" onclick="alert('¡Este botón está deshabilitado!')">Haz clic</button>
+
+    <hr><!-- Ejercicio 34 -->
+    <button type="submit" onclick="changeElementPosition()">Cambiar Posición del Elemento</button>
+    <div id="positionElement" style="width: 80px; height: 80px; background-color: lightseagreen;"></div>
+
+    <hr><!-- Ejercicio 35 -->
+    <button type="submit" onclick="toggleElementBorderRadius()">Alternar Radio de Borde</button>
+    <div id="borderRadiusToggleElement" style="width: 100px; height: 100px; background-color: #e6a0c4;"></div>
+
+    <hr><!-- Ejercicio 36 -->
+    <button type="submit" onclick="showMouseCoordinates()">Mostrar Coordenadas del Ratón</button>
+    <p id="mouseCoordinatesElement"></p>
+
+    <hr><!-- Ejercicio 37 -->
+    <button type="submit" onclick="changeElementOpacity()">Cambiar Opacidad del Elemento</button>
+    <div id="opacityElement" style="width: 100px; height: 100px; background-color: #a4c2f4;"></div>
+
+    <hr><!-- Ejercicio 38 -->
+    <button type="submit" onclick="changeElementZIndex()">Cambiar Índice Z del Elemento</button>
+    <div id="zIndexElement1" style="width: 100px; height: 100px; background-color: #ffd700; position: absolute;"></div>
+    <div id="zIndexElement2" style="width: 100px; height: 100px; background-color: #e0ffff; position: absolute;"></div>
+
+    <hr><!-- Ejercicio 39 -->
+    <button type="submit" onclick="rotateImage()">Rotar Imagen 90 grados</button>
+    <img id="rotateImageElement" src="img/juice.jpg" alt="Imagen para rotar" style="width: 100px; height: 100px;">
+
+    <hr><!-- Ejercicio 40 -->
+    <button type="submit" onclick="changeElementShadow()">Cambiar Sombra del Elemento</button>
+    <div id="shadowElement" style="width: 100px; height: 100px; background-color: #ffa07a;"></div>
+
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

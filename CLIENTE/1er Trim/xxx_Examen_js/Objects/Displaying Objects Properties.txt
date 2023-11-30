@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Objects</h2>
+<p>Display object properties:</p>
+
+<p id="demo"></p>
+
+<script>
+const person = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+//      Displaying Object Properties
+
+document.getElementById("demo").innerHTML = person.name + ", " + person.age + ", " + person.city;
+
+
+
+//      Displaying the Object in a Loop
+/*
+let txt = "";
+for (let i in person){
+    txt += person[i] + " ";
+};
+document.getElementById("demo").innerHTML = txt;
+*/
+
+
+//      Using Object.values()
+/*
+const myArray = Object.values(person);
+document.getElementById("demo").innerHTML = myArray;
+*/
+
+//-----------------------------------------------
+
+//      Using JSON.stringify()
+/*
+let myString = JSON.stringify(person);
+document.getElementById("demo").innerHTML = myString // {"name":"John","age":30,"city":"New York"}
+*/
+
+
+//      Stringify Dates (Dates to string)
+/*
+person.today = new Date();
+document.getElementById("demo").innerHTML = JSON.stringify(person)
+*/
+
+
+//      Stringify dont includes functions (can be fixed if u convert the funcion into string before)
+/*
+person.fullData = function(){
+    return name + " " + age + " " + city
+}
+document.getElementById("demo").innerHTML = JSON.stringify(person)
+// {"name":"John","age":30,"city":"New York"}
+*/
+
+//      You can Stringify Arrays too!!
+
+</script>
+
+</body>
+</html>

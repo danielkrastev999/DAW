@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de imagenes dinamica</title>
+    <style>
+        .imagen{
+            width: 200px;
+            height: 200px;
+            border: 2px solid yellow;
+            box-sizing: border-box;
+        }
+        .flex{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    
+    <input id="textfield" type="text" placeholder="url">
+    <input id="boton" type="button" value="Añadir imagen">
+
+    <div class="flex">
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/galeriaDinamica.js"></script>
+</body>
+</html>
