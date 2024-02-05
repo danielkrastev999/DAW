@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Helvetica, sans-serif;
+    
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    background-color: #107088;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #222338;
+    padding: 40px 50px;
+    border-radius: 10px;
+    width: 40%;
+    box-shadow: 10px 10px 10px #42446b;
+}
+.container2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #222338;
+    padding: 40px 50px;
+    border-radius: 10px;
+    width: 55%;
+    box-shadow: 10px 10px 10px #42446b;
+}
+
+.container3{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #222338;
+    padding: 40px 50px;
+    border-radius: 10px;
+    width: 95%;
+    box-shadow: 10px 10px 10px #42446b;
+}
+
+.game {
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: 20vh;
+    justify-content: center;
+    margin-bottom: 20px; 
+    gap: 1.5em;
+    
+}
+
+.origen {
+    position: relative;
+    width: 200px; 
+    height: 200px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 5em;
+}
+
+.draggable {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 200px;
+    height: 200px;
+    margin: 5px; 
+}
+
+.draggable img {
+    position: absolute;
+
+    height: 120px;
+    pointer-events: none;
+}
+
+.dropzones {
+    display: flex;
+    flex-direction: row; 
+    gap: .8em;
+}
+
+.dropzone {
+    width: 200px;
+    height: 200px;
+    border: 1px dashed #fefefe;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-size: 5em;
+}
+
+#titulo{
+    font-size: 3em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+#salida{
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    top: 13%; /* Ajusta la posición vertical al centro */
+
+}
+
+#boton {
+    font-size: 1em; /* Ajustado para que sea más similar al segundo código */
+    margin: 3em;
+    padding: 1em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #214784;
+    color: #fefefe;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#boton:hover {
+    background-color: #fefefe;
+    color: #214784;
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de entrada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        header {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .form-container, .table-container {
+            width: 30%;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .btnEliminar {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        
+
+    </style>
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    
+</head>
+<body>
+    <header>
+        <h1>Control de entrada</h1>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Registro</h2>
+            
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br>
+
+                <label for="apellidos">Apellidos:</label><br>
+                <input type="text" id="apellidos" name="apellidos" required><br>
+
+                <label for="dni">DNI:</label><br>
+                <input type="text" id="dni" name="dni" required><br>
+
+                <label for="contacto">Persona de contacto:</label><br>
+                <input type="text" id="contacto" name="contacto" required><br><br>
+
+                <button type="submit" onclick="guardarEntrada()">Registro</button>
+                <button type="reset" onclick="limpiar()">Limpiar</button>
+            
+        </div>
+
+        <div class="form-container">
+            <h2>Entradas</h2>
+            <label for="buscarDNI">Buscar por DNI:</label><br>
+            <input type="text" id="buscarDNI" name="buscarDNI">
+            <button type="button" onclick="buscar(campo='dni')">Buscar</button><br>
+
+            <label for="buscarApellido">Buscar por Apellido:</label><br>
+            <input type="text" id="buscarApellido" name="buscarApellido">
+            <button type="button" onclick="buscar(campo='apell')">Buscar</button><br>
+
+            <table id="tabla">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>DNI</th>
+                        <th>Contacto</th>
+                        <th>FechaEntrada</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Filas de la tabla se agregarán dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-container">
+            <h2>Salidas</h2>
+            <label for="buscarDNISalida">Buscar por DNI:</label><br>
+            <input type="text" id="buscarDNISalida" name="buscarDNISalida">
+            <button type="button">Buscar</button><br>
+    
+            <label for="buscarApellidoSalida">Buscar por Apellido:</label><br>
+            <input type="text" id="buscarApellidoSalida" name="buscarApellidoSalida">
+            <button type="button">Buscar</button><br>
+    
+            <table id="tablaSalida">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>DNI</th>
+                        <th>Contacto</th>
+                        <th>FechaEntrada</th>
+                        <th>FechaSalida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Filas de la tabla se agregarán dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Control de Entrada y Salida By <b>Daniel Krastev</b></p>
+    </footer>
+</body>
+</html>

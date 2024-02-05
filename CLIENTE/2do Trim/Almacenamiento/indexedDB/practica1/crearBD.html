@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Base de Datos en IndexedDB</title>
+    <script type="text/javascript" src="js/crearBDv1.js"></script>
+    <script src="js/crearBDautoincremento.js"></script>
+</head>
+<body>
+    <h1>Crear Base de Datos en IndexedDB</h1>
+
+    <form action="">
+        <input type="text" id="id" placeholder="ID"><br>
+        <input type="text" id="titulo" placeholder="Titulo"><br>
+        <input type="text" id="autor" placeholder="Autor"><br>
+        <input type="text" id="tipo" placeholder="Tipo"><br>
+        <input type="button" value="Guardar" onclick="guardaBD()">
+    </form>
+    <hr>
+    <form action="">
+        <input type="text" id="idai" placeholder="ID"><br>
+        <input type="text" id="tituloai" placeholder="Titulo"><br>
+        <input type="text" id="autorai" placeholder="Autor"><br>
+        <input type="text" id="tipoai" placeholder="Tipo"><br>
+        <input type="button" value="Guardar" onclick="guardaBDautoincrementada()">
+    </form>
+</body>
+</html>

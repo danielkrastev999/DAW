@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #8ecae6;
+    padding: 40px 50px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #bfc1c3;
+}
+
+h2{
+    font-size: 3em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.reset{
+    padding: 15px 20px;
+    color: #023047;
+    background-color: #fff;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reset:hover{
+    color: #fff;
+    background-color: #023047;
+}
+
+.tablero{
+    width: 340px;
+    height: 210px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    background-color: #fff;
+    transition: 0.7s;
+    cursor: pointer;
+}
+
+
+
+.item:after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #219ebc;
+    transition: 0.6s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item.tarjetaAbierta{
+    transform: rotateY(0deg);
+}
+
+.tarjetaAbierta:after, .tarjetaMatch:after{
+    transform: rotateY(180deg);
+}
+
+.resultado{
+    text-transform: uppercase;
+    top: 10%;
+    position: absolute;
+    font-size: 4em;
+    color: #023047;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+.confirmacion {
+    animation: confirmacion 0.4s ease-in-out;
+    box-shadow: 0 0 10px rgba(33, 158, 188, 0.8);
+}
+
+@keyframes confirmacion {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+    100% { transform: scale(1); }
+}

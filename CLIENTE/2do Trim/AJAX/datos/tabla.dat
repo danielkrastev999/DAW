@@ -1,0 +1,17 @@
+<table id="tabla1" class="clase1" style="border-collapse:collapse" border="1px">
+<tr><td>A</td><td>B</td></tr>
+<tr><td>A</td><td>B</td></tr>
+<tr><td>A</td><td>B</td></tr>
+</table>
+
+<table id="tabla2" class="clase2" style="border-collapse:collapse" border="1px">
+<tr><td>1</td><td>2</td></tr>
+<tr><td>1</td><td>2</td></tr>
+<tr><td>1</td><td>2</td></tr>
+</table>
+
+<table id="tabla3" class="clase1" style="border-collapse:collapse" border="1px">
+<tr><td>GG</td><td>FF</td></tr>
+<tr><td>GG</td><td>FF</td></tr>
+<tr><td>GG</td><td>FF</td></tr>
+</table>

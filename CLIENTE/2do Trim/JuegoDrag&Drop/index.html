@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop Game 1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    
+
+    <div class="container">
+        <h2 id="titulo">Drag & Drop Game</h2>
+        <div class="game">
+            <div class="origen" id="origen-1">
+                <div draggable="true" ondragstart="arrastrando(event)" id="draggable-1" class="draggable">
+                    2
+                </div>
+            </div>
+            <div class="origen" id="origen-2">
+                <div draggable="true" ondragstart="arrastrando(event)" id="draggable-2" class="draggable">
+                    1
+                </div>
+            </div>
+        </div>
+
+        <div class="dropzones">
+            <div ondragover="recibiendo(event)" ondrop="soltar(event)" id="destino-1" class="dropzone">
+                
+            </div>
+            <div ondragover="recibiendo(event)" ondrop="soltar(event)" id="destino-2" class="dropzone">
+                
+            </div>
+        </div>
+
+        <button id="boton" onclick="comprobar()">Comprobar</button>
+        <h2 id="salida"></h2>
+    </div>
+    
+</body>
+</html>

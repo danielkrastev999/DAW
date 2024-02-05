@@ -30,49 +30,49 @@
             
             <div class="row justify-content-around align-items-center mt-3">
                 <div class="col-auto">
-                    <button class="boton btn btn-outline-primary" onclick="jugar(this,0)"></button>
+                    <button id="boton0" class="boton btn btn-outline-primary" onclick="jugar(this,0)"></button>
                 </div>
                 <div class="col-auto">
-                    <button class="boton btn btn-outline-primary" onclick="jugar(this,1)"></button>
+                    <button id="boton1" class="boton btn btn-outline-primary" onclick="jugar(this,1)"></button>
                 </div>
                 <div class="col-auto">
-                    <button class="boton btn btn-outline-primary" onclick="jugar(this,2)"></button>
-                </div>
-            </div>
-
-            <div class="row justify-content-around align-items-center mt-3">
-                <div class="col-auto">
-                    <button class="boton btn btn-outline-primary" onclick="jugar(this,3)"></button>
-                </div>
-                <div class="col-auto">
-                    <button class="boton btn btn-outline-primary" onclick="jugar(this,4)"></button>
-                </div>
-                <div class="col-auto">
-                    <button class="boton btn btn-outline-primary" onclick="jugar(this,5)"></button>
+                    <button id="boton2" class="boton btn btn-outline-primary" onclick="jugar(this,2)"></button>
                 </div>
             </div>
 
             <div class="row justify-content-around align-items-center mt-3">
                 <div class="col-auto">
-                    <button class="boton btn btn-outline-primary" onclick="jugar(this,6)"></button>
+                    <button id="boton3" class="boton btn btn-outline-primary" onclick="jugar(this,3)"></button>
                 </div>
                 <div class="col-auto">
-                    <button class="boton btn btn-outline-primary" onclick="jugar(this,7)"></button>
+                    <button id="boton4" class="boton btn btn-outline-primary" onclick="jugar(this,4)"></button>
                 </div>
                 <div class="col-auto">
-                    <button class="boton btn btn-outline-primary" onclick="jugar(this,8)"></button>
+                    <button id="boton5" class="boton btn btn-outline-primary" onclick="jugar(this,5)"></button>
+                </div>
+            </div>
+
+            <div class="row justify-content-around align-items-center mt-3">
+                <div class="col-auto">
+                    <button id="boton6" class="boton btn btn-outline-primary" onclick="jugar(this,6)"></button>
+                </div>
+                <div class="col-auto">
+                    <button id="boton7" class="boton btn btn-outline-primary" onclick="jugar(this,7)"></button>
+                </div>
+                <div class="col-auto">
+                    <button id="boton8" class="boton btn btn-outline-primary" onclick="jugar(this,8)"></button>
                 </div>
             </div>  
-            <button class="btn btn-outline-dark" onclick="reiniciar()"> reiniciar</button>
+            <button class="btn btn-outline-danger" onclick="reiniciar()"> Reiniciar</button><br><br>
             <h3 id="salida"></h3>
+            <button id="siguienteBtn" class="btn btn-outline-success" onclick="siguiente()"> Siguiente</button>
+            <button id="anteriorBtn" class="btn btn-outline-success" onclick="anterior()"> Anterior</button>
+
+            
         </div>
 
-        
-        
         <div class="col-3">
-
         </div>
     </div>
-
 </body>
 </html>

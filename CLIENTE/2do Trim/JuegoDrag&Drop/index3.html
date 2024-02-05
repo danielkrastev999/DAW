@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop Game 3</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    
+
+    <div class="container3">
+
+        <h2 id="titulo">Drag & Drop Game</h2>
+
+        <div class="game">
+            <div class="origen" id="origen-1">
+                <div draggable="true" ondragstart="arrastrando(event)" id="draggable-1" data-orden="2" class="draggable">
+                    2
+                    <img src="img/2.jpg" alt="">
+                </div>
+            </div>
+            <div class="origen" id="origen-2">
+                <div draggable="true" ondragstart="arrastrando(event)" id="draggable-2" data-orden="1" class="draggable">
+                    1
+                    <img src="img/1.jpg" alt="2">
+                </div>
+            </div>
+            <div class="origen" id="origen-3">
+                <div draggable="true" ondragstart="arrastrando(event)" id="draggable-3" data-orden="5" class="draggable">
+                    5
+                    <img src="img/5.jpg" alt="3">
+                </div>
+            </div>
+            <div class="origen" id="origen-4">
+                <div draggable="true" ondragstart="arrastrando(event)" id="draggable-4" data-orden="8" class="draggable">
+                    8
+                    <img src="img/8.jpg" alt="4">
+                </div>
+            </div>
+            <div class="origen" id="origen-5">
+                <div draggable="true" ondragstart="arrastrando(event)" id="draggable-5" data-orden="3" class="draggable">
+                    3
+                    <img src="img/3.jpg" alt="5">
+                </div>
+            </div>
+            <div class="origen" id="origen-6">
+                <div draggable="true" ondragstart="arrastrando(event)" id="draggable-6" data-orden="6" class="draggable">
+                    6
+                    <img src="img/6.jpg" alt="6">
+                </div>
+            </div>
+            <div class="origen" id="origen-7">
+                <div draggable="true" ondragstart="arrastrando(event)" id="draggable-7" data-orden="7" class="draggable">
+                    7
+                    <img src="img/7.jpg" alt="7">
+                </div>
+            </div>
+            <div class="origen" id="origen-8">
+                <div draggable="true" ondragstart="arrastrando(event)" id="draggable-8" data-orden="4" class="draggable">
+                    4
+                    <img src="img/4.jpg" alt="8">
+                </div>
+            </div>
+        </div>
+
+        <div class="dropzones">
+            <div ondragover="recibiendo(event)" ondrop="soltar(event)" id="destino-1" data-orden="1" class="dropzone"></div>
+            <div ondragover="recibiendo(event)" ondrop="soltar(event)" id="destino-2" data-orden="2" class="dropzone"></div>
+            <div ondragover="recibiendo(event)" ondrop="soltar(event)" id="destino-3" data-orden="3" class="dropzone"></div>
+            <div ondragover="recibiendo(event)" ondrop="soltar(event)" id="destino-4" data-orden="4" class="dropzone"></div>
+            <div ondragover="recibiendo(event)" ondrop="soltar(event)" id="destino-5" data-orden="5" class="dropzone"></div>
+            <div ondragover="recibiendo(event)" ondrop="soltar(event)" id="destino-6" data-orden="6" class="dropzone"></div>
+            <div ondragover="recibiendo(event)" ondrop="soltar(event)" id="destino-7" data-orden="7" class="dropzone"></div>
+            <div ondragover="recibiendo(event)" ondrop="soltar(event)" id="destino-8" data-orden="8" class="dropzone"></div>
+        </div>
+
+        <button id="boton" onclick="comprobar()">Comprobar</button>
+        <h2 id="salida"></h2>
+    </div>
+    
+</body>
+</html>
